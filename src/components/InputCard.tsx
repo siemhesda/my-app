@@ -44,7 +44,7 @@ export default function InputCard({ onCreate, onClose }: Props) {
     <Card className="w-[350px]">
       <CardHeader>
         <CardTitle>Create a new note</CardTitle>
-        <CardDescription>Iinput details below to create a new note</CardDescription>
+        <CardDescription>Input details below to create a new note</CardDescription>
       </CardHeader>
       <CardContent>
         <Form {...form}>
