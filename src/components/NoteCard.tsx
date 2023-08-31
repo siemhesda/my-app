@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardContent, CardDescription, CardHeader } from "./ui/card";
+import { Card, CardDescription, CardFooter, CardHeader } from "./ui/card";
 import { Button } from "./ui/button";
 import { Note } from "@/App";
 
@@ -12,23 +12,16 @@ export default function NoteCard({ note, onRemove }: Props) {
   return (
     <Card className="w-[350px] my-2">
       <CardHeader>
-        <CardContent
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-        >
+        <CardFooter className="justify-between">
           <CardDescription>{note.note}</CardDescription>
           <Button
-            className="mr-3"
-            variant="outline"
+            className="ml-1"
+            variant="destructive"
             onClick={() => onRemove(note.id)}
-            style={{ backgroundColor: "red", color: "white" }}
           >
             X
           </Button>
-        </CardContent>
+        </CardFooter>
       </CardHeader>
     </Card>
   );

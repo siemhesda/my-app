@@ -31,7 +31,7 @@ function App() {
       },
     })
       .then((response) => response.json())
-      .then((data) => fetchNotes())
+      .then(() => fetchNotes())
       .catch((error) => console.error("Error deleting note:", error));
   };
 
@@ -44,7 +44,7 @@ function App() {
       body: JSON.stringify(newNote),
     })
       .then((response) => response.json())
-      .then((data) => {
+      .then(() => {
         fetchNotes();
         setCreateOpen(false);
       })

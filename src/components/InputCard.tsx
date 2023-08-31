@@ -3,15 +3,7 @@ import * as z from "zod";
 import { useForm } from "react-hook-form";
 
 import { Button } from "./ui/button";
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "./ui/form";
+import { Form, FormControl, FormField, FormItem, FormMessage } from "./ui/form";
 import { Input } from "./ui/input";
 import {
   Card,
@@ -20,6 +12,7 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/card";
+import { Note } from "@/App";
 
 const formSchema = z.object({
   note: z.string().min(2, {
@@ -27,7 +20,7 @@ const formSchema = z.object({
   }),
 });
 
-type Props = { onCreate: (values: any) => void; onClose: () => void };
+type Props = { onCreate: (values: Note) => void; onClose: () => void };
 
 export default function InputCard({ onCreate, onClose }: Props) {
   const form = useForm<z.infer<typeof formSchema>>({
